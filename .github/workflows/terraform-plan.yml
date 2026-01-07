@@ -44,7 +44,7 @@ jobs:
           plan: ${{ fromJSON(steps.plan-run.outputs.payload).data.relationships.plan.data.id }}
 
       - name: Save Plan Output as txt
-        runs: echo ${{ steps.plan-output.outputs.full_plan }} > tf-plan.txt
+        run: echo ${{ steps.plan-output.outputs.full_plan }} > tf-plan.txt
 
       - name: Output Plan Artifact
         uses: actions/upload-artifact@v4
